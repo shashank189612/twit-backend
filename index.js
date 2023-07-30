@@ -7,12 +7,14 @@ const { MongoClient, ServerApiVersion } = require("mongodb");
 const app = express();
 const port = process.env.PORT;
 
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://twit-frontend.onrender.com/"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["http://localhost:3000", "https://twit-frontend.onrender.com/"],
+//   })
+// );
+
 app.use(express.json());
+app.use(cors());
 
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
